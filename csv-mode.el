@@ -255,7 +255,7 @@ Number of spaces used by `csv-align-fields' after separators."
 (defconst csv-mode-line-format
   ;; See bindings.el for details of `mode-line-format' construction.
   (let* ((ml (copy-sequence (default-value 'mode-line-format)))
-         (x (or (memq 'mode-line-position ml) (last 3 ml))))
+         (x (or (memq 'mode-line-position ml) (last ml 3))))
     (when x
       (setcdr x (cons
                  `(csv-field-index-string
